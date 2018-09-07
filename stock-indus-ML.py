@@ -1,7 +1,7 @@
 # Stock Sector ML, 9-6-2018
-import os
-os.chdir(r'C:\Users\steven\Dropbox\UH Study\AAA Fall 2018\2. Topic-Data Clustering & ML\StockMLproject')
-os.getcwd()
+#import os
+#os.chdir(r'C:\...')
+#os.getcwd()
 
 import pandas as pd
 from urllib.request import urlopen as uReq # it grabs the page
@@ -32,7 +32,7 @@ ind_g.to_csv('ind_g.csv', index=True)
 '''Only Need to Write ind_g.csv Once =============================================================='''
 
 ind_g = pd.read_csv('ind_g.csv', index_col=0)
-ind_g['ind_ls']['G1']
+#ind_g['ind_ls']['G1']
 
 tik240={}
 tik240dict={}
@@ -51,7 +51,7 @@ for i in range(0, 20): # 0-20 for G1-20, we need 20 indus x 12 tiks = 240 tiks
     for j in range(0, 12): # (0, 12) is 1-12
         tiklist.append(page_soup.findAll('a', class_="screener-link-primary")[j].text.strip())
         #tikstr = tikstr + page_soup.findAll('a', class_="screener-link-primary")[j].text.strip() + ', '
-    '''
+    ''' # for next pages
     my_url = 'https://finviz.com/screener.ashx?v=111&f=ind_' + ind_g_lower + '&o=-marketcap&r=21'
     
     uClient = uReq(my_url)
@@ -78,8 +78,8 @@ for i in range(0, 20): # 0-20 for G1-20, we need 20 indus x 12 tiks = 240 tiks
     tik240dict[ind_g.index[i]] = tiklist
     #tik500str[sec_g.index[i]] = tikstr
              
-tik240df = pd.DataFrame(tik240) # df by index
-tik240dict_df = pd.DataFrame(tik240dict) # df by groups
+tik240df = pd.DataFrame(tik240) # df grouped by index
+tik240dict_df = pd.DataFrame(tik240dict) # df grouped by group num
 #tik240df.to_csv('tik240index.csv', index=False)
 #tik240dict_df.to_csv('tik240dict.csv', index=False)
 
@@ -89,25 +89,6 @@ for i in tik240df.keys():
     all_tik240 = all_tik240 + tik240[i]
 all_tik240df = pd.DataFrame(all_tik240)
 all_tik240df.to_csv('tik240.csv', index=False, header=False)
-
-'''
-import csv
-
-g_num = sec_g.index
-tik500str2 = tik500str
-
-for i in g_num:
-    tik500str2[i]=tik500str[i].replace(',', '\n')
-
-with open('tik500.csv', 'w', newline='') as f:
-    w = csv.DictWriter(f, fieldnames=tik500str.keys())
-    w.writeheader()
-    w.writerow(tik500str2)
-
-with open('tik500.csv', 'w', newline='') as myfile:
-     wr = csv.writer(myfile)
-     wr.writerows(tik500.items())
-'''
 
 
 
