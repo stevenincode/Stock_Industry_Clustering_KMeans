@@ -90,26 +90,6 @@ for i in tik240df.keys():
 all_tik240df = pd.DataFrame(all_tik240)
 all_tik240df.to_csv('tik240.csv', index=False, header=False)
 
-'''
-import csv
-
-g_num = sec_g.index
-tik500str2 = tik500str
-
-for i in g_num:
-    tik500str2[i]=tik500str[i].replace(',', '\n')
-
-with open('tik500.csv', 'w', newline='') as f:
-    w = csv.DictWriter(f, fieldnames=tik500str.keys())
-    w.writeheader()
-    w.writerow(tik500str2)
-
-with open('tik500.csv', 'w', newline='') as myfile:
-     wr = csv.writer(myfile)
-     wr.writerows(tik500.items())
-'''
-
-
 
 
 
