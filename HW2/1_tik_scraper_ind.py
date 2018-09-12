@@ -69,8 +69,7 @@ while bloop == True:
             ind_g_lower = ind_g['ind_ls'][i].lower().replace(" ", "").replace("-", "").replace("/", "").replace("&", "").replace(",", "")
             tiklist=[]
             tikstr=''
-            
-            
+           
             pagerun20 = num_tik // 20
             numleft = num_tik - 20 * pagerun20
             webindex = 1
