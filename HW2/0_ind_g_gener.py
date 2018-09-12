@@ -1,7 +1,7 @@
 # Generating industry list 'ind_g.csv' with assigned group numbers, 9-11-2018
 
 import os
-os.chdir(r'C:\Users\steven\Dropbox\UH Study\AAA Fall 2018\2. Topic-Data Clustering & ML\StockMLproject')
+os.chdir(r'C:\')
 os.getcwd()
 
 import pandas as pd
