@@ -3,7 +3,7 @@ working.directory <- "C:/"
 setwd(working.directory)
 getwd()
 
-load('master_ok.Rda')
+load('master.Rda')
 #load('./Testing/2018-09-14/master.Rda')
 #('./Testing/TRUEmaster.Rda')
 
