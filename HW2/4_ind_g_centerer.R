@@ -1,5 +1,5 @@
 # Finding centers of each industry (after "master.Rda" is created)
-working.directory <- "C:/Users/steven/Dropbox/UH Study/AAA Fall 2018/2. Topic-Data Clustering & ML/StockMLproject"
+working.directory <- "C:/"
 setwd(working.directory)
 getwd()
 
