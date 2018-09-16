@@ -34,13 +34,12 @@ for (k in 1:(num.indus*2)){ # 1:20
 
 master.reord <- master[,index]
 
-master.reord[1,1:101]
-tail(colnames(master.reord), 101)
+#master.reord[1,1:101]
+#tail(colnames(master.reord), 101)
 
 # Take Transpose of reordered master
 master.tran <- data.frame(t(master.reord))
-
-master.tran[1:51, 1:2]
+#master.tran[1:51, 1:2]
 
 # calculating centers of industries
 # index for mean calculation
