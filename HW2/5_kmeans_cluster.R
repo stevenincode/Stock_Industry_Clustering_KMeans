@@ -54,6 +54,24 @@ for (i in 1:num.randruns){
   end_time <- Sys.time()
   timelist <- c(timelist, (end_time - start_time)[[1]]) # timing in seconds
 }
+
+# renaming row & col names
+for (i in 1:dim(km.cluster.bulk)[2]){
+  colnames(km.cluster.bulk)[i] <- paste('km.clusters.', i, sep='')
+}
+
+for (i in 1:dim(km.cluster.bulk)[1]){
+  rownames(km.cluster.bulk)[i] <- rownames(master.kmready)[i]
+}
+
+for (i in 1:num.cluster){
+  rownames(km.center.bulk)[i] <- paste('H', i, sep='')
+}
+
+#km.center.bulk[,1:2]
+#km.cluster.bulk[1:5,1:5]
+#km.cluster.bulk[3990:4000,1:5]
+
 # save all result summaries into one Rda file
 save(timelist,list = kmlist, file = paste('kmean_results_',num.randruns,'runs_fullsummary.Rda',sep=''))
 
