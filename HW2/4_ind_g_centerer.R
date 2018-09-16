@@ -52,11 +52,11 @@ for (i in 1:(ntik.master / num.tik)){ # 80
   a <- a + num.tik # 50
 }
 
-g.mean <- NULL
+ind.center <- NULL
 b <- 1
 for (i in index.r){
-  g.mean <- rbind(g.mean, apply(master.tran[i:(i+num.tik-1),], 2, mean, na.rm=T))
-  g.mean <- data.frame(g.mean)
+  ind.center <- rbind(ind.center, apply(master.tran[i:(i+num.tik-1),], 2, mean, na.rm=T))
+  ind.center <- data.frame(ind.center)
   # assign group names
   sub <- c(strsplit(rownames(master.tran)[i],'[.]')[[1]][2],
            strsplit(rownames(master.tran)[i],'[.]')[[1]][3])
@@ -64,17 +64,17 @@ for (i in index.r){
   if (length(sub)==2){
     sub <- paste(sub[1], sub[2], sep = '.')
   }
-  g.mean.name <- paste('G',toString(rep(rep(1:num.indus, each=num.shifts+1),2)[b]),sub,sep='.')
-  if (rownames(g.mean)[b] != g.mean.name){
-    rownames(g.mean)[b] <- g.mean.name
+  ind.center.name <- paste('G',toString(rep(rep(1:num.indus, each=num.shifts+1),2)[b]),sub,sep='.')
+  if (rownames(ind.center)[b] != ind.center.name){
+    rownames(ind.center)[b] <- ind.center.name
   }
   b <- b + 1
 }
-#g.mean[1:12,1:12]
-#g.mean[59:80,1:2]
-dim(g.mean) # 80 x 2266 days
+#ind.center[1:12,1:12]
+#ind.center[59:80,1:2]
+dim(ind.center) # 80 x 2266 days
 
-save(g.mean, file = 'g_mean.Rda')
+save(ind.center, file = 'ind_center.Rda')
 
 
 
