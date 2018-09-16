@@ -33,7 +33,7 @@ library(ClusterR)
 start_time <- Sys.time()
 
 num.initial <- 1 # 20
-num.randruns <- 10 # 100 times, 100 results
+num.randruns <- 30 # 100 times, 100 results
 num.cluster <- 10 # 10 num.indus
 
 km.df <- NULL
