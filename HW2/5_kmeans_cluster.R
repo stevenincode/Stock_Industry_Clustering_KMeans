@@ -112,7 +112,7 @@ for (i in 1:num.cluster){
 #km.cluster.bulk[3990:4000,1:5]
 
 # save all result summaries into one Rda file
-save(timelist,list = kmlist, file = paste('kmean_results_',num.randruns,'runs_fullsummary.Rda',sep=''))
+save(timelist, kmlist, list = kmlist, file = paste('kmean_results_',num.randruns,'runs_fullsummary.Rda',sep=''))
 
 # only save cluster results and centers
 save(timelist, km.cluster.bulk, km.center.bulk, file = paste('kmean_results_',num.randruns,'runs.Rda',sep=''))
