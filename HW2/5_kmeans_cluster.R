@@ -26,7 +26,7 @@ write.csv(master.tik.g, file='master_tik4000_g.csv', row.names = F)
 master.tik.g <- read.csv('master_tik4000_g.csv')
 
 # replace NA with mean in its group, 1 day
-for (j in 1:ncol(master.tran)){
+"for (j in 1:ncol(master.tran)){
   if (sum(is.na(master.tran[,j]))>0){
     for (i in 1:nrow(master.tran)){ # 3600:4000 rows
     #for (i in 3600:4000){
@@ -36,14 +36,19 @@ for (j in 1:ncol(master.tran)){
       }
     }
   }
-}
+}"
 
 # replace NA with mean of the whole col (all tik)
+for(i in 1:ncol(master.tran)){
+  master.tran[is.na(master.tran[,i]), i] <- 0 # mean of standardized data is all 0
+}
+
+# replace NA with mean # **Need Fix, should be by row, by tik
 #for(i in 1:ncol(master.tran)){
-#  master.tran[is.na(master.tran[,i]), i] <- mean(master.tran[,i], na.rm = TRUE)
+#  master.tran[is.na(master.tran[,i]), i] <- mean(master.tran[,i], na.rm = TRUE) # mean of standardized data is all 0
 #}
 
-# replace NAN with mean
+# replace NAN with mean 
 #for(i in 1:ncol(master.tran)){
 #  master.tran[is.nan(master.tran[,i]), i] <- mean(master.tran[,i], na.rm = TRUE)
 #}
@@ -67,7 +72,7 @@ library(ClusterR)
 start_time <- Sys.time()
 
 num.initial <- 1 # 20
-num.randruns <- 2 # 100 times, 100 results
+num.randruns <- 30 # 100 times, 100 results
 num.cluster <- 10 # 10 num.indus
 
 km.df <- NULL
