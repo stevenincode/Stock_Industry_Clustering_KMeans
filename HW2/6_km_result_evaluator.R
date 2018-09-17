@@ -28,15 +28,18 @@ for (i in 1:num.randruns){
 # check NA, NaN
 which(is.na(cost.f.kmruns))
 
+ssdiv.df <- data.frame(ssdiv.total)
+cost.df <- data.frame(cost.f.kmruns)
+
 # find which $between.SS_DIV_total.SS is closest to 1 (best clustering)
 which.min((ssdiv.total-1)^2) # km run No.79 is the best
-ssdiv.df <- data.frame(ssdiv.total)
+
 rownames(ssdiv.df)[order((ssdiv.total-1)^2)] # ranking by closest to 1
 rownames(ssdiv.df)[order(ssdiv.df$ssdiv.total, decreasing = T)] # or by ranking from high since all < 1.
 
 # find which km run has the min COST value (best clustering)
 which(cost.f.kmruns == min(cost.f.kmruns, na.rm=T)) # km run No.14 is the best
-cost.df <- data.frame(cost.f.kmruns)
+
 rownames(cost.df)[order(cost.f.kmruns)] # ranking from min COST
 
 # combined ranking by sum the orders
