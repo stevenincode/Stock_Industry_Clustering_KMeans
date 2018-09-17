@@ -38,19 +38,14 @@ master.tik.g <- read.csv('master_tik4000_g.csv')
   }
 }"
 
-# replace NA with mean of the whole col (all tik)
+# replace NA and NaN with mean of the whole col (all tik)
 for(i in 1:ncol(master.tran)){
   master.tran[is.na(master.tran[,i]), i] <- 0 # mean of standardized data is all 0
 }
 
-# replace NA with mean # **Need Fix, should be by row, by tik
+# replace NA and NaN with mean # **Need Fix, should be by row, by tik
 #for(i in 1:ncol(master.tran)){
 #  master.tran[is.na(master.tran[,i]), i] <- mean(master.tran[,i], na.rm = TRUE) # mean of standardized data is all 0
-#}
-
-# replace NAN with mean 
-#for(i in 1:ncol(master.tran)){
-#  master.tran[is.nan(master.tran[,i]), i] <- mean(master.tran[,i], na.rm = TRUE)
 #}
 
 # replace Inf with mean
