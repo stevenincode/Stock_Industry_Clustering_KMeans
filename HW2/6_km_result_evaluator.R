@@ -63,7 +63,7 @@ library(tidyquant)
 
 p <- ggplot(ssdiv.df, aes(ssdiv.df$rank, ssdiv.df$ssdiv.total, label = rownames(ssdiv.df)))
 plot.ssdiv <- p + geom_point() + geom_text(size =2,  nudge_y = 0.0005) + 
-  labs(x = 'Ranking from Best', y = 'Between.SS / Total.SS', 
+  labs(x = 'Ranking from the Best K-Means Run', y = 'Between.SS / Total.SS', 
        title = 'Between Sum Sq / Total Sum Sq = (total_SSE - sum(WCSS_per_cluster)) / total_SSE')
 
 plot.ssdiv
@@ -78,14 +78,14 @@ cost.df$cost.f.kmruns <- cost.f.kmruns2
 
 p2 <- ggplot(cost.df, aes(cost.df$rank, cost.df$cost.f.kmruns, label = rownames(cost.df)))
 plot.cost <- p2 + geom_point() + geom_text(size =2,  nudge_y = 50) + 
-  labs(x = 'Ranking from Best', y = 'COST Value', title = 
+  labs(x = 'Ranking from the Best K-Means Run', y = 'COST Value', title = 
          'COST = sum(result$WCSS_per_cluster / result$obs_per_cluster)') # check_overlap = TRUE
 
 plot.cost
 
 # plot rankavg
 p3 <- ggplot(eval.avg, aes(eval.avg$rank, eval.avg$rankavg, label = rownames(eval.avg)))
-p3.1 <- p3 + labs(x = 'Ranking from Best', y = 'Ranks Average', 
+p3.1 <- p3 + labs(x = 'Ranking from the Best K-Means Run', y = 'Ranks Average', 
                  title = 'High: Between.SS / Total.SS        Low: COST Value') + geom_point()
 
 
