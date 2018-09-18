@@ -88,11 +88,10 @@ plot.cost
 
 # plot rankavg
 p3 <- ggplot(eval.avg, aes(eval.avg$rank, eval.avg$rankavg, label = rownames(eval.avg)))
-p3.1 <- p3 + labs(x = 'Ranking from the Best K-Means Run', y = 'Ranks Average', 
-                 title = 'High: Between.SS / Total.SS        Low: COST Value') + geom_point()
+p3.1 <- p3 + labs(x = 'Ranking from the Best K-Means Run', y = 'Ranks Average') + geom_point()
 
 
-plot.rankavg <- p3.1 + geom_text(size =2,  nudge_y = 5)
+plot.rankavg <- p3.1 + geom_text(size =2,  nudge_y = 5) + labs(title = 'Low as the Top Ranked')
 
 plot.rankavg
 
@@ -101,7 +100,8 @@ plot.rankavg.candle <- p3.1 + geom_text(size =2,  nudge_y = 50) +
   geom_candlestick(aes(open = eval.avg$rank.ssdiv, high = eval.avg$rank.ssdiv, 
                        low = eval.avg$rank.cost, close = eval.avg$rank.cost), 
                    fill_up = "darkgreen", fill_down = "red") +
-  geom_line(aes(eval.avg$rank, eval.avg$rankavg), eval.avg)
+  geom_line(aes(eval.avg$rank, eval.avg$rankavg), eval.avg) + 
+  labs(title = 'Open: Between.SS / Total.SS        Close: COST Value')
 
 plot.rankavg.candle
 
