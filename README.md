@@ -5,8 +5,8 @@ Scraping 10 industries x 50 stocks, ranked by Market Cap from the top:
 - Stock data from [Yahoo Finance](https://finance.yahoo.com/) 
 ### Follow the code file indexes: (Note: always date the files, stock list may change daily)
 - 0_ind_g_gener.py:
-  - generates **'ind_g.csv'**
+  - generates **"ind_g.csv"** ("G1, G2..." assigned to each industry names)
 - 1_tik_scraper_ind.py:
-  - scraps & generates **'tik500.csv'**
+  - scraps & generates **"tik500.csv"**
 - 4_ind_g_centerer.R:
-  - generates **'ind_center.Rda'**, which is the industry centers using 9 years master.Rda, dim = 80 x 2266
+  - generates **"ind_center.Rda"**, which is the industry centers using 9 years master.Rda, dim = 80 x 2266
