@@ -1,5 +1,5 @@
 # MSDS-ML
-## Stock ML Projects
+## Stock Clustering Project
 Prepare 10 industries x 50 stocks with 10 years of stock data (check IPOs), which both are ranked by the Market Cap from high to low:
 - Industry & ticker lists are scraped from [Finviz.com](https://www.finviz.com) 
 - Daily stock data is from [Yahoo Finance](https://finance.yahoo.com/) 
