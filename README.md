@@ -11,7 +11,7 @@ Prepare 10 industries x 50 stocks with 10 years of stock data (check IPOs), whic
 - **1_tik_scraper_ind.py:**
   - automatically scraps stock tickers page by page, then generates **"tik500.csv"** (500 tickers saved in one column).
 
-- **data preparation:**
+- **2-3 Data preparation:**
   - **"master.Rda"** (2266 x 4000) file is created by combining stock data from each CSV files (standardized close price, (1 + 3) shifts for each, with inversed data (500 x 4 x 2 = 4000 columns, *"AIG, AIG.s1, AIG.s5, AIG.s30..."*, and 2266 rows for all dates from 2009 to 2017).
 
 - **4_ind_g_centerer.R:**
