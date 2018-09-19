@@ -1,5 +1,5 @@
 # MSDS-ML
-## ML HW Projects
+## Stock ML Projects
 Scraping 10 industries x 50 stocks, ranked by Market Cap from the top:
 - Industry & ticker lists are scraped from [Finviz.com](https://www.finviz.com) 
 - Stock data is from [Yahoo Finance](https://finance.yahoo.com/) 
