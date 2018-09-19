@@ -4,7 +4,7 @@ Prepare 10 industries x 50 stocks with 10 years of stock data (check IPOs), whic
 - Industry & ticker lists are scraped from [Finviz.com](https://www.finviz.com) 
 - Daily stock data is from [Yahoo Finance](https://finance.yahoo.com/) 
 
-### Follow the code file indexes: (*Note: always date the files, stock list may change daily*)
+### Follow the code file indexes (*Note: always date the files, stock list may change daily*):
 - 0_ind_g_gener.py:
   - scraps industry names by URLs (or hand pick them), then generates **"ind_g.csv"** (*"G1, G2..."* assigned to each industry names).
 
