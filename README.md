@@ -19,7 +19,7 @@ Prepare 10 industries x 50 stocks with 10 years of stock data (check IPOs), whic
 
 - 5_kmeans_cluster.R:
   - cleans NAs, NaNs and Infs by 0 in *master.tran* (zero mean of standardized data, and K-Means cannot run if data has NA, NaN or Inf), and generates **"master_kmready.Rda"** & **"master_tik4000_g.csv"** (a list of 4000 tickers with assigned group numbers).
-  - loops multiple runs of K-Means (package [*"ClusterR"*](https://cran.r-project.org/web/packages/ClusterR/ClusterR.pdf) has *"K-Means++"* initializer) and records computing time for each run. 100 result summaries are saved in **"kmean_results_100runs_fullsummary.Rda"**, and 100 cluster results and center results are saved in **"kmean_results_100runs.Rda"**.
+  - loops multiple runs of K-Means (package [*"ClusterR"*](https://cran.r-project.org/web/packages/ClusterR/ClusterR.pdf) has *"K-Means++"* initializer) and records computing time for each run. 100 result summaries are saved in **"kmean_results_100runs_fullsummary.Rda"**, and 100 cluster results & center results are saved in **"kmean_results_100runs.Rda"**.
   
   
 
