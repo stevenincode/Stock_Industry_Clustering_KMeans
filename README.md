@@ -1,8 +1,9 @@
 # MSDS-ML
 ## Stock ML Projects
-Scraping 10 industries x 50 stocks, ranked by Market Cap from the top:
+Prepare 10 industries x 50 stocks with 10 years of stock data (check IPOs), which both are ranked by the Market Cap from high to low:
 - Industry & ticker lists are scraped from [Finviz.com](https://www.finviz.com) 
 - Stock data is from [Yahoo Finance](https://finance.yahoo.com/) 
+
 ### Follow the code file indexes: (*Note: always date the files, stock list may change daily*)
 - 0_ind_g_gener.py:
   - scraps industry names by URLs (or hand pick them), then generates **"ind_g.csv"** (*"G1, G2..."* assigned to each industry names).
